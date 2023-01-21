@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.circle {
+  background-color: rgb(165, 77, 77);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  left: -20%;
+  top: -20%;
+  width: 70rem;
+  height: 40rem;
+  background: #B66BF0;
+  filter: blur(150px);
+}
+
+.circle:nth-of-type(2) {
+  width: 75rem;
+  height: 40rem;
+  right: -20%;
+  top: -20%;
+  background: #866BF0;
+  filter: blur(150px);
+}
+
+.circle:nth-of-type(3) {
+  left: 30%;
+  top: 10%;
+  height: 42rem;
+  width: 30rem;
+  background: #D7A4FF;
+  filter: blur(150px);
+}
+
+.circle:nth-of-type(4) {
+  bottom: -15%;
+  right: 20%;
+  width: 40rem;
+  height: 40rem;
+  background: #A044FD;
+  filter: blur(150px);
+}
+
+.circle:nth-of-type(5) {
+  width: 55rem;
+  height: 55rem;
+  right: -15%;
+  bottom: -30%;
+  background: #B66BF0;
+  filter: blur(150px);
+}
+
+.circle:nth-of-type(6) {
+  width: 80rem;
+  height: 70rem;
+  left: -20%;
+  bottom: -50%;
+  background: #866BF0;
+  filter: blur(150px);
+}
+
+.circle:nth-of-type(7) {
+  width: 50rem;
+  height: 45rem;
+  left: 20%;
+  top: -40%;
+  background: #C781FF;
+  filter: blur(150px);
+}
+
+.front_circle {
+  width: 20rem;
+  height: 20rem;
+  background-color: #B24AF1;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+}
+
+body > div:nth-child(8) {
+  position: absolute;
+  left: 20%;
+  top: 10%;
+}
+
+body > div:nth-child(9) {
+  right: 18%;
+  bottom: 5%;
+}
+
+main {
+  width: 60rem;
+  height: 35rem;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1.5rem;
+  background: linear-gradient(330deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  z-index: 2;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+main form {
+  border-radius: 1.5rem;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+main form .form_input_group {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+main form .form_input_group label {
+  font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 0.4rem;
+}
+main form .form_input_group input {
+  border-radius: 5px;
+  border: 0;
+  height: 1.7rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+main form .form_input_group textarea {
+  border-radius: 10px;
+  border: 0;
+  resize: none;
+  padding: 0.5rem;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+main form .form_input_group textarea::-moz-placeholder {
+  letter-spacing: 5px;
+  color: black;
+}
+main form .form_input_group textarea:-ms-input-placeholder {
+  letter-spacing: 5px;
+  color: black;
+}
+main form .form_input_group textarea::placeholder {
+  letter-spacing: 5px;
+  color: black;
+}
+main form button {
+  width: 80%;
+  margin-bottom: 1rem;
+  padding-block: 0.2rem;
+  font-size: larger;
+  border-radius: 5px;
+  border: 0;
+  background-color: rgba(178, 74, 241, 0.5647058824);
+}
+main .tasks-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .tasks-section .done {
+  opacity: 0.5;
+  filter: blur(1.2px);
+}
+main .tasks-section .todo_container {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  margin-block: 1rem;
+  padding-block: 1rem;
+  border-radius: 1rem;
+}
+main .tasks-section .todo_container .todo_info {
+  display: flex;
+  flex-direction: column;
+}
+main .tasks-section .todo_container .todo_info p:first-of-type {
+  padding-block: 0.2rem;
+}
+main .tasks-section .todo_container .todo_info h2 {
+  -webkit-text-decoration: underline 2px;
+          text-decoration: underline 2px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+}
+main .tasks-section .todo_container .todo_info p {
+  opacity: 0.6;
+}
+main .tasks-section .todo_container .todo_description {
+  width: 35%;
+}
+main .tasks-section .todo_container button {
+  height: 1.3rem;
+  width: 1.3rem;
+  background: rgba(178, 74, 241, 0.5647058824);
+  border: 0;
+  border-radius: 3px;
+  align-self: flex-end;
+  font-size: 1.2rem;
+}/*# sourceMappingURL=main.css.map */
