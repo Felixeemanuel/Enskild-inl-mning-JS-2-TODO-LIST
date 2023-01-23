@@ -20,7 +20,7 @@
     <div class="front_circle"></div>
 
     <main>
-        <form action="">
+        <form id="form" action="">
             <div class="form_input_group">
                 <label for="todo">TO-DO</label>
                 <input type="text" id="todo" class="input_todo">
@@ -37,10 +37,11 @@
                 <label for="description">DESCRIPTION</label>
                 <textarea placeholder="..." name="description" id="description" cols="30" rows="7"></textarea>
             </div>
-            <button>ADD</button>
+            <button id="submitBtn">ADD</button>
+            <p id="errorMessage">Du måste fylla i en aktivitet!</p>
         </form>
 
-        <div class="tasks-section">
+        <div id="tasksOutput" class="tasks-section">
             <h1>TASKS</h1>
             <div class="todo_container">
                 <div class="todo_info">
@@ -77,5 +78,8 @@
             </div>
         </div>
     </main>
+
+    <script src="app.js"></script>
+    <script src="validate.js"></script>
 </body>
 </html>

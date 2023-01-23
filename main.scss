@@ -204,7 +204,22 @@ main {
                 border-radius: 3px;
                 align-self: flex-end;
                 font-size: 1.2rem;
+                cursor: pointer;
             }
         }
     }
+}
+
+.error {
+    outline: 1px solid red;
+}
+.success {
+    outline: none;
+}
+
+#errorMessage {
+    color: rgb(201, 42, 42);
+    font-size: 18px;
+    padding-bottom: .5rem;
+    display: none;
 }

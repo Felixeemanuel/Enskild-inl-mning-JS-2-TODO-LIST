@@ -1,6 +1,8 @@
 FÖR GODKÄNT
 
 - Använda Fetch när sidan laddas för att hämta hem todos från databasen till en lista som sedan ska visas på sidan
+https://jsonplaceholder.typicode.com/todos
+
 
 - Skapa ett formulär med en text input och en knapp där användare kan lägga till en ny todo. Denna input ska valideras så att det inte går att lägga till en tom todo.
 
