@@ -10,9 +10,6 @@ body {
 }
 
 .circle {
-    background-color: rgb(165, 77, 77);
-    width: 500px;
-    height: 500px;
     border-radius: 50%;
     position: absolute;
     z-index: -1;
@@ -23,7 +20,7 @@ body {
     top: -20%;
     width: 70rem;
     height: 40rem;
-    background: #B66BF0;
+    background: #6B90F0;
     filter: blur(150px);
 }
 .circle:nth-of-type(2) {
@@ -31,7 +28,7 @@ body {
     height: 40rem;
     right: -20%;
     top: -20%;
-    background: #866BF0;
+    background: #368DBE;
     filter: blur(150px);
 }
 .circle:nth-of-type(3) {
@@ -39,7 +36,7 @@ body {
     top: 10%;
     height: 42rem;
     width: 30rem;
-    background: #D7A4FF;
+    background: #A4D3FF;
     filter: blur(150px);
 }
 .circle:nth-of-type(4) {
@@ -47,7 +44,7 @@ body {
     right: 20%;
     width: 40rem;
     height: 40rem;
-    background: #A044FD;
+    background: #4A7EE1;
     filter: blur(150px);
 }
 .circle:nth-of-type(5) {
@@ -55,7 +52,7 @@ body {
     height: 55rem;
     right: -15%;
     bottom: -30%;
-    background: #B66BF0;
+    background: #6BB0F0;
     filter: blur(150px);
 }
 .circle:nth-of-type(6) {
@@ -63,7 +60,7 @@ body {
     height: 70rem;
     left: -20%;
     bottom: -50%;
-    background: #866BF0;
+    background: #6BD0F0;
     filter: blur(150px);
 }
 .circle:nth-of-type(7) {
@@ -71,7 +68,7 @@ body {
     height: 45rem;
     left: 20%;
     top: -40%;
-    background: #C781FF;
+    background: #81D9FF;
     filter: blur(150px);
 }
 
@@ -88,11 +85,14 @@ body > div:nth-child(8) {
     position: absolute;
     left: 20%;
     top: 10%;
-
+    // backg    round-color: #4ABFF1;
+    background: linear-gradient(330deg, #4abff100, #4abff1);
 }
 body > div:nth-child(9) {
     right: 18%;
     bottom: 5%;
+    background-color: #A4D3FF;
+    background: linear-gradient(to bottom, #A4D3FF, #a4d3ff21);
 }
 
 main {
@@ -106,7 +106,8 @@ main {
     border-radius: 1.5rem;
     background: linear-gradient(330deg, rgba(255, 255, 255, .1), rgb(255, 255, 255, .4));
     z-index: 2;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(15px);
+    // filter: blur(5px);
     form {
         border-radius: 1.5rem;
         flex: 1;
@@ -131,6 +132,7 @@ main {
                 border: 0;
                 height: 1.7rem;
                 background-color: rgba(255, 255, 255, .8);
+                box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.034);
             }
             textarea {
                 border-radius: 10px;
@@ -139,6 +141,8 @@ main {
                 padding: .5rem;
                 font-size: 15px;
                 background-color: rgba(255, 255, 255, .8);
+                box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.034);
+
             }
             textarea::placeholder {
                 letter-spacing: 5px;
@@ -153,7 +157,8 @@ main {
             font-size: larger;
             border-radius: 5px;
             border: 0;
-            background-color: #B24AF190;
+            background-color: #368DBE;
+            cursor: pointer;
         }
     }
     .tasks-section {
@@ -161,10 +166,15 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        padding-top: 2rem;
+        overflow: scroll;
         .done {
             opacity: 0.5;
-            filter: blur(1.2px);
+            filter: brightness(0.5);
+            h2 {
+                text-decoration: line-through 2px;
+            }
+            
         }
         
         .todo_container {
@@ -176,38 +186,70 @@ main {
             position: relative;
             margin-block: 1rem;
             padding-block: 1rem;
+            padding-inline: 1rem;
             border-radius: 1rem;
             .todo_info {
                 display: flex;
                 flex-direction: column;
+                flex: 1;
                 p:first-of-type {
                     padding-block: .2rem;
                 }
                 h2 {
-                    text-decoration: underline 2px;
                     font-size: 18px;
                     font-weight: 600;
                     display: inline-block;
                 }
                 p {
                     opacity: .6;
+                    word-wrap: break-word;
                 }
             }
             .todo_description {
-                width: 35%;
+                flex: 1;
+                box-sizing: content-box;
+                max-width: 15rem;
+                word-wrap: break-word;
+                
             }
-            button {
-                height: 1.3rem;
-                width: 1.3rem;
-                background: #B24AF190;
-                border: 0;
-                border-radius: 3px;
-                align-self: flex-end;
-                font-size: 1.2rem;
-                cursor: pointer;
+            .todo_button_wrapper {
+                flex: 1;
+                display: flex;
+                justify-content: end;
+                button {
+                    height: 1.3rem;
+                    width: 1.3rem;
+                    background: #4A7EE1;
+                    border: 0;
+                    border-radius: 3px;
+                    align-self: flex-end;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    margin-right: 1rem;
+                }
+                i {
+                    font-size: 21px;
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
             }
         }
     }
+}
+.tasks-section::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin-top: 2rem;
+}
+.tasks-section::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+.tasks-section::-webkit-scrollbar-thumb{
+    background-color: #0000007d;
+    border-radius: 4px;
+}
+.tasks-section::-webkit-scrollbar-corner {
+    background-color: transparent;
 }
 
 .error {
@@ -222,4 +264,35 @@ main {
     font-size: 18px;
     padding-bottom: .5rem;
     display: none;
+}
+
+.modal {
+    visibility: hidden;
+    position: absolute;
+    border-radius: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #368DBE;
+    width: 25rem;
+    height: 15rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.303);
+    p {
+        text-align: center;
+        font-size: 25px;
+        width: 80%;
+    }
+    button {
+        width: 10rem;
+        font-size: 18px;
+        padding-block: .5rem;
+        border-radius: .5rem;
+        border: 1px solid black;
+        cursor: pointer;
+    }
 }

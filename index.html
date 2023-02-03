@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/3e10381a88.js" crossorigin="anonymous"></script>
     <title>TO-DO App</title>
 </head>
 <body>
@@ -19,7 +20,12 @@
     <div class="front_circle"></div>
     <div class="front_circle"></div>
 
-    <main>
+    <div id="modal" class="modal">
+        <p>You can't delete without completing the task first!</p>
+        <button id="modalBtn">Got it!</button>
+    </div>
+
+    <main id="main">
         <form id="form" action="">
             <div class="form_input_group">
                 <label for="todo">TO-DO</label>
@@ -43,43 +49,13 @@
 
         <div id="tasksOutput" class="tasks-section">
             <h1>TASKS</h1>
-            <div class="todo_container">
-                <div class="todo_info">
-                    <h2>Klippa Håret</h2>
-                    <p>Idag, 10:00</p>
-                    <p>Karlaplan 1, 124 71</p>
-                </div>
-                <div class="todo_description">
-                    <p>Prova på ny frisör, det ska bli kul</p>
-                </div>
-                <button class="todo_button">&#x2713;</button>
-            </div>
-            <div class="todo_container">
-                <div class="todo_info">
-                    <h2>Köpa ny TV</h2>
-                    <p>Idag, 10:00</p>
-                    <p>Södertälje</p>
-                </div>
-                <div class="todo_description">
-                    <p>Rea på Elgiganten i södertälje</p>
-                </div>
-                <button class="todo_button">&#x2713;</button>
-            </div>
-            <div class="todo_container done">
-                <div class="todo_info">
-                    <h2>Träna</h2>
-                    <p>Idag, 10:00</p>
-                    <p>Hagsätra Centrum</p>
-                </div>
-                <div class="todo_description">
-                    <p>10 min jogging, Bröst, triceps, axlar</p>
-                </div>
-                <button class="todo_button">&#x2713;</button>
-            </div>
+            
         </div>
     </main>
+    
+        
 
-    <script src="app.js"></script>
-    <script src="validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
