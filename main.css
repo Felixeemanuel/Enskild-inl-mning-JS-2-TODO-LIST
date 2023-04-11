@@ -176,6 +176,7 @@ main form .form_input_group label {
 @media screen and (max-width: 800px) {
   main form .form_input_group label {
     font-size: 0.9rem;
+    color: black;
   }
 }
 main form .form_input_group input {
@@ -240,6 +241,9 @@ main form button {
   main form button {
     font-size: 0.9rem;
   }
+}
+main form button i {
+  color: black;
 }
 main .tasks-section {
   flex: 2;

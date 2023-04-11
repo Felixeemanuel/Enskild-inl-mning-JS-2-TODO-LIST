@@ -165,6 +165,7 @@ main {
 
                 @media screen and (max-width: $small) {
                     font-size: .9rem;
+                    color: black;
                 }
             }
             input {
@@ -225,6 +226,10 @@ main {
             @media screen and (max-width: $small) {
                 font-size: .9rem;
             }
+        }
+
+        button i {
+            color: black;
         }
     }
     .tasks-section {
