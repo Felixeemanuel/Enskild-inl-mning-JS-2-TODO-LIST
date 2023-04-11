@@ -176,6 +176,8 @@ main {
 
                 @media screen and (max-width: $small) {
                     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197); 
+                    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197);
+                    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197);
                 }
 
                 @media screen and (max-width: $small) {
@@ -218,6 +220,7 @@ main {
             border: 0;
             background-color: #368DBE;
             cursor: pointer;
+            color: black;
 
             @media screen and (max-width: $small) {
                 font-size: .9rem;

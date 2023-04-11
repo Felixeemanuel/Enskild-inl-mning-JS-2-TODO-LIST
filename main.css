@@ -188,6 +188,8 @@ main form .form_input_group input {
 @media screen and (max-width: 800px) {
   main form .form_input_group input {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197);
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197);
   }
 }
 @media screen and (max-width: 800px) {
@@ -232,6 +234,7 @@ main form button {
   border: 0;
   background-color: #368DBE;
   cursor: pointer;
+  color: black;
 }
 @media screen and (max-width: 800px) {
   main form button {
