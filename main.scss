@@ -1,3 +1,5 @@
+$small: 800px;
+
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +7,28 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+body, html {
+    overflow-x: hidden;
+
+    @media screen and (max-width: $small) {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+}
+
 body {
     overflow: hidden;
+    background-color: white;
 }
 
 .circle {
     border-radius: 50%;
     position: absolute;
     z-index: -1;
+
+    @media screen and (max-width: $small) {
+        display: none;
+    }
 }
 
 .circle:nth-of-type(1) {
@@ -79,6 +95,11 @@ body {
     border-radius: 50%;
     z-index: 1;
     position: absolute;
+
+    @media screen and (max-width: $small) {
+        display: none;
+    }
+    
 }
 
 body > div:nth-child(8) {
@@ -107,6 +128,14 @@ main {
     background: linear-gradient(330deg, rgba(255, 255, 255, .1), rgb(255, 255, 255, .4));
     z-index: 2;
     backdrop-filter: blur(15px);
+
+    @media screen and (max-width: $small) {
+        width: 100%;
+        height: 100vh;
+        flex-direction: column; 
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
     // filter: blur(5px);
     form {
         border-radius: 1.5rem;
@@ -118,14 +147,25 @@ main {
         align-items: center;
         justify-content: space-around;
         padding-top: 1rem;
+
+        @media screen and (max-width: $small) {
+            border-radius: 0;
+            background-color: white;
+            border-bottom-left-radius: 3rem;
+        }
         .form_input_group {
             display: flex;
             flex-direction: column;
             width: 80%;
+            
             label {
                 font-weight: 600;
                 font-size: 18px;
                 padding-bottom: .4rem;
+
+                @media screen and (max-width: $small) {
+                    font-size: .9rem;
+                }
             }
             input {
                 border-radius: 5px;
@@ -133,6 +173,16 @@ main {
                 height: 1.7rem;
                 background-color: rgba(255, 255, 255, .8);
                 box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.034);
+
+                @media screen and (max-width: $small) {
+                    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197); 
+                }
+
+                @media screen and (max-width: $small) {
+                    font-size: .8rem;
+                    height: auto;
+                    padding: .3rem 1rem;
+                }
             }
             textarea {
                 border-radius: 10px;
@@ -143,11 +193,20 @@ main {
                 background-color: rgba(255, 255, 255, .8);
                 box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.034);
 
+                // @media screen and (max-width: $small) {
+                //     display: none;
+                // }
+
             }
             textarea::placeholder {
                 letter-spacing: 5px;
                 color: black;
 
+            }
+        }
+        .textarea_input_group {
+            @media screen and (max-width: $small) {
+                display: none;
             }
         }
         button {
@@ -159,6 +218,10 @@ main {
             border: 0;
             background-color: #368DBE;
             cursor: pointer;
+
+            @media screen and (max-width: $small) {
+                font-size: .9rem;
+            }
         }
     }
     .tasks-section {
@@ -168,6 +231,20 @@ main {
         align-items: center;
         padding-top: 2rem;
         overflow: scroll;
+        // border: 1px solid black;
+
+        @media screen and (max-width: $small) {
+            flex: 1;
+            background: transparent;
+            background: #6BD0F0;
+        }
+
+        h1 {
+            @media screen and (max-width: $small) {
+                display: none;
+            }
+        }
+
         .done {
             opacity: 0.5;
             filter: brightness(0.5);
@@ -188,6 +265,13 @@ main {
             padding-block: 1rem;
             padding-inline: 1rem;
             border-radius: 1rem;
+
+            @media screen and (max-width: $small) {
+                width: 90%;
+                margin-block: .2rem;
+                padding-block: .5rem;
+                border-radius: .6rem;
+            }
             .todo_info {
                 display: flex;
                 flex-direction: column;
@@ -199,6 +283,11 @@ main {
                     font-size: 18px;
                     font-weight: 600;
                     display: inline-block;
+
+                    @media screen and (max-width: $small) {
+                        font-size: .9rem;
+                        display: block;
+                    }
                 }
                 p {
                     opacity: .6;
@@ -210,12 +299,16 @@ main {
                 box-sizing: content-box;
                 max-width: 15rem;
                 word-wrap: break-word;
+                @media screen and (max-width: $small) {
+                    display: none;
+                }
                 
             }
             .todo_button_wrapper {
                 flex: 1;
                 display: flex;
                 justify-content: end;
+                align-items: center;
                 button {
                     height: 1.3rem;
                     width: 1.3rem;
@@ -226,11 +319,21 @@ main {
                     font-size: 1.2rem;
                     cursor: pointer;
                     margin-right: 1rem;
+
+                    @media screen and (max-width: $small) {
+                        height: 1rem;
+                        width: 1rem;
+                        font-size: .9rem;
+                    }
                 }
                 i {
                     font-size: 21px;
                     opacity: 0.8;
                     cursor: pointer;
+
+                    @media screen and (max-width: $small) {
+                        font-size: 1.1rem;
+                    }
                 }
             }
         }

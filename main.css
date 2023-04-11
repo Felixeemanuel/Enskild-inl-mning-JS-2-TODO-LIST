@@ -5,14 +5,30 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body, html {
+  overflow-x: hidden;
+}
+@media screen and (max-width: 800px) {
+  body, html {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
 body {
   overflow: hidden;
+  background-color: white;
 }
 
 .circle {
   border-radius: 50%;
   position: absolute;
   z-index: -1;
+}
+@media screen and (max-width: 800px) {
+  .circle {
+    display: none;
+  }
 }
 
 .circle:nth-of-type(1) {
@@ -86,6 +102,11 @@ body {
   z-index: 1;
   position: absolute;
 }
+@media screen and (max-width: 800px) {
+  .front_circle {
+    display: none;
+  }
+}
 
 body > div:nth-child(8) {
   position: absolute;
@@ -115,6 +136,15 @@ main {
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
+@media screen and (max-width: 800px) {
+  main {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
 main form {
   border-radius: 1.5rem;
   flex: 1;
@@ -126,6 +156,13 @@ main form {
   justify-content: space-around;
   padding-top: 1rem;
 }
+@media screen and (max-width: 800px) {
+  main form {
+    border-radius: 0;
+    background-color: white;
+    border-bottom-left-radius: 3rem;
+  }
+}
 main form .form_input_group {
   display: flex;
   flex-direction: column;
@@ -136,12 +173,29 @@ main form .form_input_group label {
   font-size: 18px;
   padding-bottom: 0.4rem;
 }
+@media screen and (max-width: 800px) {
+  main form .form_input_group label {
+    font-size: 0.9rem;
+  }
+}
 main form .form_input_group input {
   border-radius: 5px;
   border: 0;
   height: 1.7rem;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.034);
+}
+@media screen and (max-width: 800px) {
+  main form .form_input_group input {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197);
+  }
+}
+@media screen and (max-width: 800px) {
+  main form .form_input_group input {
+    font-size: 0.8rem;
+    height: auto;
+    padding: 0.3rem 1rem;
+  }
 }
 main form .form_input_group textarea {
   border-radius: 10px;
@@ -164,6 +218,11 @@ main form .form_input_group textarea::placeholder {
   letter-spacing: 5px;
   color: black;
 }
+@media screen and (max-width: 800px) {
+  main form .textarea_input_group {
+    display: none;
+  }
+}
 main form button {
   width: 80%;
   margin-bottom: 1rem;
@@ -174,6 +233,11 @@ main form button {
   background-color: #368DBE;
   cursor: pointer;
 }
+@media screen and (max-width: 800px) {
+  main form button {
+    font-size: 0.9rem;
+  }
+}
 main .tasks-section {
   flex: 2;
   display: flex;
@@ -181,6 +245,18 @@ main .tasks-section {
   align-items: center;
   padding-top: 2rem;
   overflow: scroll;
+}
+@media screen and (max-width: 800px) {
+  main .tasks-section {
+    flex: 1;
+    background: transparent;
+    background: #6BD0F0;
+  }
+}
+@media screen and (max-width: 800px) {
+  main .tasks-section h1 {
+    display: none;
+  }
 }
 main .tasks-section .done {
   opacity: 0.5;
@@ -202,6 +278,14 @@ main .tasks-section .todo_container {
   padding-inline: 1rem;
   border-radius: 1rem;
 }
+@media screen and (max-width: 800px) {
+  main .tasks-section .todo_container {
+    width: 90%;
+    margin-block: 0.2rem;
+    padding-block: 0.5rem;
+    border-radius: 0.6rem;
+  }
+}
 main .tasks-section .todo_container .todo_info {
   display: flex;
   flex-direction: column;
@@ -215,6 +299,12 @@ main .tasks-section .todo_container .todo_info h2 {
   font-weight: 600;
   display: inline-block;
 }
+@media screen and (max-width: 800px) {
+  main .tasks-section .todo_container .todo_info h2 {
+    font-size: 0.9rem;
+    display: block;
+  }
+}
 main .tasks-section .todo_container .todo_info p {
   opacity: 0.6;
   word-wrap: break-word;
@@ -225,10 +315,16 @@ main .tasks-section .todo_container .todo_description {
   max-width: 15rem;
   word-wrap: break-word;
 }
+@media screen and (max-width: 800px) {
+  main .tasks-section .todo_container .todo_description {
+    display: none;
+  }
+}
 main .tasks-section .todo_container .todo_button_wrapper {
   flex: 1;
   display: flex;
   justify-content: end;
+  align-items: center;
 }
 main .tasks-section .todo_container .todo_button_wrapper button {
   height: 1.3rem;
@@ -241,10 +337,22 @@ main .tasks-section .todo_container .todo_button_wrapper button {
   cursor: pointer;
   margin-right: 1rem;
 }
+@media screen and (max-width: 800px) {
+  main .tasks-section .todo_container .todo_button_wrapper button {
+    height: 1rem;
+    width: 1rem;
+    font-size: 0.9rem;
+  }
+}
 main .tasks-section .todo_container .todo_button_wrapper i {
   font-size: 21px;
   opacity: 0.8;
   cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  main .tasks-section .todo_container .todo_button_wrapper i {
+    font-size: 1.1rem;
+  }
 }
 
 .tasks-section::-webkit-scrollbar-track {
