@@ -242,9 +242,6 @@ main form button {
     font-size: 0.9rem;
   }
 }
-main form button i {
-  color: black;
-}
 main .tasks-section {
   flex: 2;
   display: flex;
@@ -343,6 +340,7 @@ main .tasks-section .todo_container .todo_button_wrapper button {
   font-size: 1.2rem;
   cursor: pointer;
   margin-right: 1rem;
+  color: black;
 }
 @media screen and (max-width: 800px) {
   main .tasks-section .todo_container .todo_button_wrapper button {
