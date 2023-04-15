@@ -174,6 +174,7 @@ main {
                 height: 1.7rem;
                 background-color: rgba(255, 255, 255, .8);
                 box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.147);
+                border: .5px solid grey;
 
                 @media screen and (max-width: $small) {
                     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.197); 
